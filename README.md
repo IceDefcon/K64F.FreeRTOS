@@ -1,4 +1,4 @@
-# GCC Blinky Example for K64F Board
+# Blinky for K64F Board
 # Driven by the MIT FreeRTOS
 
 System has been build from a combination of repositories:
