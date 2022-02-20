@@ -13,7 +13,6 @@
 #define GPIOB_PDOR (*(int *)0x400FF040u)    // Port Data Output Register    (1759)
 #define PIN_N 21                            // PTB21 --> Blue LED  			(1761)
 
-
 //
 // FOR SPI ---> CLOCK Pin as GPIO
 //
@@ -55,7 +54,7 @@ void blinky_task()
     while(1) {
         GPIOB_PDOR ^= 1 << PIN_N;               // Toggle with XOR
         GPIOD_PDOR ^= 1 << PIN_SPI_N;           // Toggle with XOR
-        vTaskDelay(1 / portTICK_PERIOD_MS);   // 500/10
+        vTaskDelay(1 / portTICK_PERIOD_MS);     // 500/10
     }
 }
 
