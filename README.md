@@ -16,7 +16,7 @@ Example of how to assign GPIO pin as an output connected to Cyclon II FPGA where
 	#define PORTB_PCR21_MUX 8                   // Mux "001"                    (282)
 	#define GPIOB_PDDR (*(int *)0x400FF054u)    // Port Data Direction Register (1760)
 	#define GPIOB_PDOR (*(int *)0x400FF040u)    // Port Data Output Register    (1759)
-	#define PIN_N 21                            // PTB21 --> Blue LED  			(1761)
+	#define PIN_N 21                            // PTB21 --> Blue LED  	    (1761)
 
 
 # ICE
