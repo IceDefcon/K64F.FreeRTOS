@@ -4,24 +4,23 @@ OBJCPY=arm-none-eabi-objcopy
 CFLAGS=-Wall -Wextra -mfloat-abi=softfp -mthumb -mcpu=cortex-m4 -g -nostartfiles
 LDSCRIPT=linker/k64f.ld
 SRCS=\
-    startup/startup.s \
-    startup/startup.c \
-    rtos/portable/GCC/ARM_CM4F/port.c \
-    rtos/portable/MemMang/heap_1.c \
-    rtos/event_groups.c \
-    rtos/list.c \
-    rtos/queue.c \
-    rtos/tasks.c \
-    rtos/timers.c \
-    rtos/croutine.c \
-    rtos/stream_buffer.c \
-    app/main.c \
+startup/startup.c \
+rtos/list.c \
+rtos/event_groups.c \
+rtos/croutine.c \
+rtos/timers.c \
+rtos/stream_buffer.c \
+rtos/portable/MemMang/heap_1.c \
+rtos/portable/GCC/ARM_CM4F/port.c \
+rtos/tasks.c \
+rtos/queue.c \
+app/main.c \
 
 INCLUDES=\
-    -Iinclude \
-    -Irtos/include \
-    -Irtos/config \
-    -Irtos/portable/GCC/ARM_CM4F \
+-Irtos/include \
+-Irtos/config \
+-Irtos/portable/GCC/ARM_CM4F \
+-Iinclude \
 
 all:
 	$(CC) $(INCLUDES) $(SRCS) $(CFLAGS) -T $(LDSCRIPT) -o $(TARGET).elf
